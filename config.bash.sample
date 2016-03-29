@@ -1,0 +1,24 @@
+# CONFIGURABLE OPTIONS
+
+# To add directories to your $PATH, add them below
+# by separating them with :
+DOTFILES_PATH=
+
+# To add directories to your $LD_LIBRARY_PATH, add them
+# below by separating them with :
+DOTFILES_LD_LIBRARY_PATH=
+
+# Set your preferred editor
+DOTFILES_EDITOR=vim
+
+# Set commands to ignore in the Bash histor
+# Separate multiple commands with :
+DOTFILES_HISTIGNORE='ls:pwd:exit:clear'
+
+# Set your Git username and email
+GIT_USER=''
+GIT_EMAIL=''
+
+# Set your Bzr whoami string and username
+BZR_WHOAMI=''
+BZR_USER=''

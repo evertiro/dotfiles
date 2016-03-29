@@ -1,0 +1,11 @@
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias back='cd $OLDPWD'
+alias grep='grep -n --color=auto'
+alias psearch='ps aux | grep'
+alias vi='vim'
+alias sudo='sudo '
+alias ssh='ssh -A'
+
+which colortail &>/dev/null && alias tail='colortail -q -k /etc/colortail/conf.messages'

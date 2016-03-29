@@ -2,11 +2,11 @@
 
 # To add directories to your $PATH, add them below
 # by separating them with :
-DOTFILES_PATH=
+DOTFILES_PATH=''
 
 # To add directories to your $LD_LIBRARY_PATH, add them
 # below by separating them with :
-DOTFILES_LD_LIBRARY_PATH=
+DOTFILES_LD_LIBRARY_PATH=''
 
 # Set your preferred editor
 DOTFILES_EDITOR=vim

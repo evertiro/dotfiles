@@ -1,6 +1,6 @@
-# Oh My Zsh {{{
+# Oh  My Zsh {{{
 
-if [ ! -d $HOME/.oh-my-zsh ]; then
+if [ -d $HOME/.oh-my-zsh ]; then
     export ZSH=/home/dgriffiths/.oh-my-zsh
 
     ZSH_THEME="omega-minimal"
@@ -72,7 +72,7 @@ if which vim &>/dev/null; then
     alias vi="vim"
 fi
 
-if [ ! -f $HOME/.zshrc ]; then
+if [ -f $HOME/.zshrc ]; then
     alias reload="source $HOME/.zshrc"
 fi
 

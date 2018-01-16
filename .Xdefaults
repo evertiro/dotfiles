@@ -1,0 +1,40 @@
+! Do not scroll with output
+URxvt.scrollTtyOutput: false
+
+! Scroll in relation to buffer
+URxvt.scrollWithBuffer: true
+
+! Scroll to bottom on keypress
+URxvt.scrollTtyKeypress: true
+
+! Scroll secondary screen buffer
+URxvt.secondaryScroll: true
+
+! Setup buffer
+URxvt.saveLines: 10000
+
+! Disable scrollbar
+URxvt.scrollBar: false
+
+! Setup font
+URxvt.font: xft:Ubuntu Mono:pixelsize=11
+
+! Make URLs clickable
+URxvt.perl-ext-common: default,matcher
+URxvt.url-launcher: /usr/bin/chromium
+URxvt.matcher.button: 1
+
+! Setup colors
+URxvt.foreground: white
+URxvt.transparent: true
+URxvt.shading: 30
+
+! Set urgency hint
+URxvt.visualBell: true
+URxvt.urgentOnBell: true
+
+! Pastable tabs
+URxvt.pastableTabs: true
+
+! Set TERM variable (needed for tmux)
+URxvt.termName: xterm

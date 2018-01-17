@@ -62,26 +62,40 @@ bindsym $mod+space exec dmenu_run
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # Start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec --no-startup-id urxvtc
+
+# Take a screenshot
+bindsym Print exec --no-startup-id scrot -e 'mv $f ~/Pictures/Screenshots' && notify-send -u LOW "Scrot" "Screenshot Taken"
 
 # }}}
 
 # Workspaces {{{
 
 # Define workspaces
+# 1: Internet
+# 2: Console
+# 3: Chat
+# 4: Code
+# 5: Misc
 set $ws1 ""
 set $ws2 ""
-set $ws3 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
 
 # Move container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
 
 # More workspace navigation
 bindsym $mod+Control+Left workspace prev
@@ -91,7 +105,9 @@ bindsym $mod+Control+End workspace $ws3
 
 # Assign apps
 assign [class="Chromium"] $ws1
+assign [class="Gimp"] $ws5
 for_window [class="Gimp"] floating enable
+for_window [class="Lxappearance"] floating enable
 
 # }}}
 

@@ -1,0 +1,158 @@
+# Keybindings - General {{{
+
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
+set $mod Mod4
+
+# Reload configuration
+bindsym $mod+Shift+c reload
+
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# Exit i3
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you really want to log out?' -b 'Yes' 'i3-msg exit'"
+
+# }}}
+
+# Keybindings - Window management {{{
+
+# Allow dragging windows with mouse+mod
+floating_modifier $mod
+
+# Kill focused window
+bindsym $mod+Shift+q kill
+
+# Change focus
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+bindsym $mod+Down focus down
+bindsym $mod+Left focus left
+
+# Move focused window
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Left move left
+
+# Split orientations
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Toggle fullscreen
+bindsym $mod+w fullscreen toggle
+
+# Container layout
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+#bindsym $mod+e layout toggle split
+bindsym $mod+l layout toggle all
+
+# Toggle floating
+bindsym $mod+f floating toggle
+
+# Focus parent
+bindsym $mod+p focus parent
+
+# }}}
+
+# Keybindings - Apps {{{
+
+# Start dmenu
+bindsym $mod+space exec dmenu_run
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# Start a terminal
+bindsym $mod+Return exec urxvtc
+
+# }}}
+
+# Workspaces {{{
+
+# Define workspaces
+set $ws1 ""
+set $ws2 ""
+set $ws3 ""
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+
+# Move container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+
+# More workspace navigation
+bindsym $mod+Control+Left workspace prev
+bindsym $mod+Control+Right workspace next
+bindsym $mod+Control+Home workspace $ws1
+bindsym $mod+Control+End workspace $ws3
+
+# Assign apps
+assign [class="Chromium"] $ws1
+for_window [class="Gimp"] floating enable
+
+# }}}
+
+# Window resizing {{{
+
+bindsym $mod+r mode "resize"
+mode "resize" {
+    bindsym Up resize grow height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Down resize shrink height 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+# }}}
+
+# Visual config {{{ 
+
+# Font declaration
+font pango: Ubuntu Mono 8
+
+# Borders
+hide_edge_borders both
+
+# Theme colors
+set $bg-color		    #2f343f
+set $inactive-bg-color	    #2f443f
+set $urgent-bg-color	    #f3f4f5
+set $text-color		    #676e7d
+set $inactive-text-color    #e53935
+set $indicator-color	    #00ff00
+
+# Window colors		    Border		Background	    Text		    Indicator
+client.focused		    $bg-color		$bg-color	    $text-color		    $indicator-color
+client.unfocused	    $inactive-bg-color	$inactive-bg-color  $inactive-text-color    $indicator-color
+client.focused_inactive	    $inactive-bg-color	$inactive-bg-color  $inactive-text-color    $indicator-color
+client.urgent		    $urgent-bg-color	$urgent-bg-color    $text-color		    $indicator-color
+
+# }}}
+
+# Status bar {{{
+
+bar {
+    font pango: UbuntuMono,FontAwesome 8
+    status_command i3blocks
+    #status_command i3blocks -c /home/dgriffiths/.config/i3/i3blocks.conf
+    #strip_workspace_numbers yes
+    position top
+    workspace_buttons yes
+
+    colors {
+	background $bg-color
+	separator $757575
+
+	#		    Border		Background	    Text
+	focused_workspace   $bg-color		$bg-color	    $text-color
+	inactive_workspace  $inactive-bg-color	$inactive-bg-color  $inactive-text-color
+	urgent_workspace    $urgent-bg-color	$urgent-bg-color    $text-color
+    }
+}
+
+# }}}

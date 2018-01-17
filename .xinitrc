@@ -8,10 +8,16 @@ done
 urxvtd -q -f -o
 
 # Network manager
-wicd-gtk &
+wicd-client --tray &
 
 # Enable numlock
 numlockx &
+
+# Notification daemon
+dunst &
+
+# Compositing
+compton --config $HOME/.compton.conf &
 
 # Setup screen locking
 betterlockscreen -w &

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+binlist=(
+  'startx'                    # Launch your X session,
+  '/bin/bash --login'              # or just execute your shell,
+)
+
+namelist=('i3' Console)
+
+flaglist=(C C)
+
+# See /usr/share/doc/cdm/themes for some nice choices.
+dialogrc=
+
+# Use ConsoleKit for X session?
+consolekit=no

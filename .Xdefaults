@@ -26,8 +26,10 @@ URxvt.matcher.button: 1
 
 ! Setup colors
 URxvt.foreground: white
-URxvt.transparent: true
-URxvt.shading: 30
+#URxvt.transparent: true
+#URxvt.shading: 30
+URxvt.depth: 32
+URxvt.background: [70]#000000
 
 ! Set urgency hint
 URxvt.visualBell: true

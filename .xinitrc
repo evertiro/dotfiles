@@ -19,6 +19,9 @@ dunst &
 # Compositing
 compton --config $HOME/.compton.conf &
 
+# Clipboard manager
+clipmenud &
+
 # Setup screen locking
 betterlockscreen -w &
 xautolock -time 15 -locker 'betterlockscreen -l' &

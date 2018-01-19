@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+from pathlib import Path
+
+runfile = Path("/home/dgriffiths/.togglelock")
+
+if runfile.exists():
+    print("<span color='#ff0000'><span font='FontAwesome'>\uf13e</span></span> ")
+else:
+    print("<span color='#00ff00'><span font='FontAwesome'>\uf023</span></span> ")

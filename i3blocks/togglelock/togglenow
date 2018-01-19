@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ ! -f /home/dgriffiths/.togglelock ]; then
+    xautolock -disable
+    notify-send -u low -a "ToggleLock" "Screensaver disabled!"
+    touch /home/dgriffiths/.togglelock
+else
+    xautolock -enable
+    notify-send -u low -a "ToggleLock" "Screensaver enabled!"
+    rm /home/dgriffiths/.togglelock
+fi

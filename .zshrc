@@ -110,7 +110,8 @@ fi
 
 # Debian specific {{{
 
-if which apt-get &>/dev/null; then
+if which apt &>/dev/null; then
+    alias apt="sudo apt"
     alias apt-get="sudo apt-get"
 
     # Setup Ubuntu packaging tools

@@ -73,6 +73,10 @@ if which vim &>/dev/null; then
     alias vi="vim"
 fi
 
+if which xclip &>/dev/null; then
+    alias copy="xclip -sel c <"
+fi
+
 if [ -f $HOME/.zshrc ]; then
     alias reload="source $HOME/.zshrc"
 fi

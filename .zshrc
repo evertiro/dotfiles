@@ -1,7 +1,7 @@
 # Oh  My Zsh {{{
 
 if [ -d $HOME/.oh-my-zsh ]; then
-    export ZSH=/home/dgriffiths/.oh-my-zsh
+    export ZSH=$HOME/.oh-my-zsh
 
     ZSH_THEME="omega-minimal"
     ENABLE_CORRECTION="true"

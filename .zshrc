@@ -24,6 +24,7 @@ fi
 
 # Exports {{{
 
+unsetopt correct_all
 export EDITOR='vim'
 export VISUAL='vim'
 [ -z $SSH_TTY ] && export BROWSER=chromium || BROWSER=lynx
